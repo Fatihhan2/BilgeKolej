@@ -1,0 +1,41 @@
+﻿@model DataAccess.Entity.Öğrenci
+@{
+    ViewBag.Title = "ÖğrenciDeğerGiriş";
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<table class="table">
+
+    <thead>
+        <tr>
+
+            <th></th>
+            <th></th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+       
+        
+
+        {
+        <tr>
+
+            <td>
+                <a href="/Öğretmen/ÖğrenciL/Devamsızlık/@Model.ID" class="btn btn-sm btn-success">Devamsızlık Girişi</a>
+            </td>
+            <td>
+                <a href="/Öğretmen/ÖğrenciL/NotGirişi/@Model.ID" class="btn btn-sm btn-success">Not Girişi</a>
+            </td>
+            <td>
+                <a href="/Öğretmen/ÖğrenciL/ÖğrenciİlişkiKesilmesi/@Model.ID" class="btn btn-sm btn-success">Okuldan Ayrılma</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,34 @@
+﻿@model List<DataAccess.Entity.Sınıf>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Sınıf No</th>
+            <th></th>
+            
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        
+        {
+        <tr>
+            <td>@item.SınıfNo</td>
+            <td>
+                <a href="/Öğretmen/ÖğrenciL/SınıfListesi/@item.SınıfID" class="btn btn-sm btn-success">Sınıfı Görüntüle</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

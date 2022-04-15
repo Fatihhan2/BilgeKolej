@@ -1,0 +1,33 @@
+﻿@model DataAccess.Entity.Dersler
+@{
+    ViewBag.Title = "Oluştur";
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="col-md-6 mx-auto">
+    <form method="post">
+        <div class="mt-2">
+            @Html.LabelFor(x => x.DersAdı)
+            @Html.ValidationMessageFor(x => x.DersAdı)
+            @Html.TextBoxFor(x => x.DersAdı, null, new { @class = "form-control" })
+        </div>
+        <div class="mt-2">
+            @Html.LabelFor(x => x.HD)
+            @Html.ValidationMessageFor(x => x.HD)
+            @Html.TextBoxFor(x => x.HD, null, new { @class = "form-control" })
+        </div>
+        <div class="mt-2">
+            @Html.LabelFor(x => x.Kod)
+            @Html.ValidationMessageFor(x => x.Kod)
+            @Html.TextBoxFor(x => x.Kod, null, new { @class = "form-control" })
+        </div>
+        <div class="mt-2">
+            @Html.LabelFor(x => x.Sırası)
+            @Html.ValidationMessageFor(x => x.Sırası)
+            @Html.TextBoxFor(x => x.Sırası, null, new { @class = "form-control" })
+        </div>
+
+        <button class="btn btn-primary">Oluştur</button>
+    </form>
+</div>
+

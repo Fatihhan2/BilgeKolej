@@ -1,0 +1,66 @@
+﻿@model WEB.Areas.Öğretmen.Models.MultiModel3
+@{
+    
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Numara</th>
+            <th>Sınıf </th>
+            <th>Şube</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Cinsiyeti</th>
+            <th>Devam Durumu</th>
+            
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var p in Model.Öğrencis)
+        {
+           
+        <tr>
+            @if (p.SınıfID != Model.Sınıf.SınıfID)
+            {
+            <td>
+                @p.OkulNo
+            </td>
+            <td>
+                @Model.Sınıf.SınıfNo
+            </td>
+
+            <td>
+                @Model.Sınıf.SınıfNo.Substring(0, 1)
+            </td>
+            <td>
+                @p.Ad
+            </td>
+            <td>@p.Soyad</td>
+
+            if (p.Cinsiyet == true)
+            {
+                <td>Kız</td>
+            }
+            else 
+            {
+                <td>Erkek</td>
+            }
+            <td>@p.Status</td>
+           
+
+            }
+        <td>  <a href="/Öğretmen/ÖğrenciL/ÖğrenciDeğerGiriş/@p.ID" class="btn btn-sm btn-success">ÖğrenciAyarları</a></td>
+        </tr>
+      
+               
+        }
+    </tbody>
+</table>
+

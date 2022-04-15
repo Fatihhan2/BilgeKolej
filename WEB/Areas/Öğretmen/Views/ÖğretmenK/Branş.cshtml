@@ -1,0 +1,10 @@
+﻿@model WEB.Areas.Öğretmen.Models.MultiModel2
+@{
+
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+@foreach (var item in Model.Derslers)
+{
+    @Html.ActionLink(item.DersAdı, "BranşDeğişimi", "ÖğretmenK", new { @öğretmend = Model.Öğretmen.ÖğretmenID, dersd = item.ID }, null)
+}
+

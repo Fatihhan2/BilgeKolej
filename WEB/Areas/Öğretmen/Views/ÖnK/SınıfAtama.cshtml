@@ -1,0 +1,15 @@
+﻿@model WEB.Areas.Öğretmen.Models.MultiModel
+@{
+    ViewBag.Title = "SınıfAtama";
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+@foreach (var item in Model.SınıfListesi)
+{
+
+    @Html.ActionLink(item.SınıfNo, "SınıfYerleştirme", "Önk", new { @Öğrencid=Model.ÖnKayıt.ID,@sınıfd=item.SınıfID}, null)
+}
+
+
+
+
+

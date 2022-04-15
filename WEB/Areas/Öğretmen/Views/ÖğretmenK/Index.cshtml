@@ -1,0 +1,57 @@
+﻿@model WEB.Areas.Öğretmen.Models.MultiModel2
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+<a href="/Öğretmen/ÖğretmenK/Oluştur" class="btn btn-sm btn-warning">Ekle</a>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Sırası</th>
+            <th>Ad-Soyad </th>
+            <th>Görevi</th>
+            <th>Branşı</th>
+            <th></th>
+            <th></th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var p in Model.Öğretmens)
+        {
+            <tr>
+                <td>
+                    @p.Sırası
+                </td>
+                <td>
+                    @p.Ad @p.Soyad
+                </td>
+
+                <td>@p.Görevi</td>
+
+                
+                    @foreach (var item in Model.Derslers)
+                    {
+                        if (item.ID == p.DerslerID)
+                        {
+                          <td>@item.DersAdı</td>  
+                        }
+                        else
+                        {
+                            
+                        }
+                    }
+                <td><a href="/Öğretmen/ÖğretmenK/Branş/@p.ÖğretmenID" class="btn btn-sm btn-default">BranşDeğiştirme</a>   </td>
+                <td><a href="/Öğretmen/ÖğretmenK/Düzenle/@p.ÖğretmenID" class="btn btn-sm btn-success">Düzenle</a></td>
+
+
+            </tr>
+
+        }
+    </tbody>
+</table>

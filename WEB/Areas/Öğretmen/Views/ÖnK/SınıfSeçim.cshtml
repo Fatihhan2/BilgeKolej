@@ -1,0 +1,43 @@
+﻿@model List<DataAccess.Entity.Önkayıt>
+@{
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>OkulNo</th>
+                <th>Ad Soyad</th>
+                <th>NotOrtalama</th>
+                <th></th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>
+                        @p.OkulNo
+                    </td>
+                    <td>
+                        @p.Ad @p.Soyad
+                    </td>
+                    
+                    <td>@p.NotOrtalaması </td>
+
+                    <td>
+                        
+                        <a href="/Öğretmen/Önk/SınıfAtama/@p.ID" class="btn btn-sm btn-warning">SınıfAta</a>
+                    </td>
+                   
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+

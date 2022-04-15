@@ -1,0 +1,46 @@
+﻿@model List<DataAccess.Entity.Dersler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Öğretmen/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<a href="/Öğretmen/Dersler/Oluştur" class="btn btn-sm btn-warning">Ekle</a>
+<table class="table">
+   
+    <thead>
+        <tr>
+            <th>Kod</th>
+            <th>Dersin Adı </th>
+            <th>HD</th>
+            <th>Sırası</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var p in Model)
+        {
+        <tr>
+            <td>
+                @p.Kod
+            </td>
+            <td>
+                @p.DersAdı
+            </td>
+
+            <td>@p.HD</td>
+
+            <td>
+                @p.Sırası
+            </td>
+
+            <td> <a href="/Öğretmen/Dersler/Sil/@p.ID" class="btn btn-sm btn-warning">Silme</a></td>
+            <td> <a href="/Öğretmen/Dersler/Değiştir/@p.ID" class="btn btn-sm btn-warning">İncele</a></td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+
